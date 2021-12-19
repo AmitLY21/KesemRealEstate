@@ -1,10 +1,12 @@
 package com.ALDev.kesemrealestate.Objects;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,7 +16,10 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ALDev.kesemrealestate.R;
+import com.google.android.material.chip.Chip;
 import com.google.android.material.textview.MaterialTextView;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 
@@ -47,8 +52,14 @@ public class Adapter_Property extends RecyclerView.Adapter<RecyclerView.ViewHold
         Property property = getItem(position);
         Log.d("pttt", "position= " + position);
 
+        propertyViewHolder.carouselView.setPageCount(property.propertyImages.length);
+        propertyViewHolder.carouselView.setImageListener((position1, imageView) -> imageView.setImageResource(property.propertyImages[position1]));
+
         propertyViewHolder.property_LBL_title.setText(property.getAddress());
         propertyViewHolder.property_LBL_description.setText(property.getDescription());
+
+        propertyViewHolder.property_numOfRooms_chip.onRtlPropertiesChanged(View.LAYOUT_DIRECTION_RTL);
+        propertyViewHolder.property_numOfRooms_chip.setText("מספר חדרים: " + String.valueOf(property.getNumOfRooms()));
 
         if (property.isLiked()) {
             propertyViewHolder.property_IMG_favorite.setImageResource(R.drawable.ic_heart_filled);
@@ -56,6 +67,8 @@ public class Adapter_Property extends RecyclerView.Adapter<RecyclerView.ViewHold
             propertyViewHolder.property_IMG_favorite.setImageResource(R.drawable.ic_heart_empty);
         }
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -69,20 +82,22 @@ public class Adapter_Property extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     private class PropertyViewHolder extends RecyclerView.ViewHolder {
 
-        public AppCompatImageView property_IMG_image;
+        public CarouselView carouselView;
         public AppCompatImageButton property_IMG_favorite;
         public MaterialTextView property_LBL_title;
         public MaterialTextView property_LBL_description;
+        public Chip property_numOfRooms_chip;
         public AppCompatButton property_map;
 
 
         public PropertyViewHolder(@NonNull View itemView) {
             super(itemView);
-            property_IMG_image = itemView.findViewById(R.id.img_container);
+            carouselView = itemView.findViewById(R.id.carouselView);
             property_IMG_favorite = itemView.findViewById(R.id.property_IMG_favorite);
             property_LBL_title = itemView.findViewById(R.id.property_LBL_title);
             property_LBL_description = itemView.findViewById(R.id.property_LBL_address);
             property_map = itemView.findViewById(R.id.property_map);
+            property_numOfRooms_chip = itemView.findViewById(R.id.chip_numOfRooms);
 
             itemView.setOnClickListener(view -> propertyItemClickListener.propertyItemClicked(getItem(getAdapterPosition()), getAdapterPosition()));
 

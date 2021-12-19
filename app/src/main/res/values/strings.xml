@@ -3,6 +3,7 @@
     <string name="home_lbl"> בית</string>
     <string name="like_lbl"> אהבתי</string>
     <string name="contact_me_lbl">צור קשר</string>
+    <string name="num_of_rooms_lbl">מספר חדרים: </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,11 +1,12 @@
 package com.ALDev.kesemrealestate.Objects;
 
 import android.media.Image;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
 public class Property {
-    ArrayList<Image> propertyImages = new ArrayList<>();
+    int[] propertyImages = new int[15];
     int numOfRooms;
     int numOfBathrooms;
     int squareFoot;
@@ -151,11 +152,11 @@ public class Property {
         return isLiked;
     }
 
-    public ArrayList<Image> getPropertyImages() {
+    public int[] getPropertyImages() {
         return propertyImages;
     }
 
-    public Property setPropertyImages(ArrayList<Image> propertyImages) {
+    public Property setPropertyImages(int[] propertyImages) {
         this.propertyImages = propertyImages;
         return this;
     }

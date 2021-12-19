@@ -13,20 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_container"
+
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carouselView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@color/cardview_dark_background">
-
-        </androidx.appcompat.widget.AppCompatImageView>
+            android:layout_above="@id/info_container"
+            app:fillColor="#FFFFFFFF"
+            app:pageColor="#00000000"
+            app:autoPlay="false"
+            app:radius="6dp"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/property_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/img_container"
+            android:layout_alignRight="@+id/carouselView"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/rounded_corener_button"
@@ -38,11 +42,12 @@
 
         </androidx.appcompat.widget.AppCompatButton>
 
+
         <LinearLayout
+            android:id="@+id/info_container"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="100dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -72,12 +77,24 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="100dp"
                     android:ellipsize="end"
-                    android:maxLines="2"
+                    android:maxLines="3"
                     android:minLines="2"
                     android:text="PROPERTY_ADDRESS"
                     android:textSize="14sp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_numOfRooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/varela_round"
+                    android:text="NUM_OF_ROOMS"
+                    app:chipBackgroundColor="@color/grey"
+                    app:chipStrokeColor="@color/cardview_dark_background"
+                    app:chipStrokeWidth="0.5dp" />
+
 
             </LinearLayout>
 
@@ -86,9 +103,9 @@
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@null"
                 android:padding="50dp"
                 android:scaleType="fitCenter"
-                android:background="@null"
                 android:src="@drawable/ic_heart_empty" />
 
         </LinearLayout>

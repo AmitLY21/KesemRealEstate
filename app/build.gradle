@@ -30,6 +30,8 @@ android {
 dependencies {
 
     implementation 'com.airbnb.android:lottie:4.2.2'
+    implementation 'com.google.android.material:material:1.5.0-alpha04'
+    implementation 'com.synnapps:carouselview:0.1.5'
 
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'

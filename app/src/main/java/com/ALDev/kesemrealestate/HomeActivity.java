@@ -38,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
      */
     private void bottomNavViewSwitcher() {
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
+        bottomNavigationView.setItemIconTintList(null);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
         bottomNavigationView.setSelectedItemId(R.id.page_1_home);
 

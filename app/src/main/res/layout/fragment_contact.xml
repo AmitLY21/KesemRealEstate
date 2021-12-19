@@ -13,8 +13,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/contact_lbl"
@@ -23,7 +22,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="100dp"
                 android:fontFamily="@font/varela_round"
-                android:text="צור קשר"
+                android:text="@string/contact_me_lbl"
                 android:textSize="36sp" />
 
         </RelativeLayout>
