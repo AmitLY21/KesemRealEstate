@@ -15,13 +15,11 @@ import com.ALDev.kesemrealestate.R;
 
 public class contactFragment extends Fragment {
 
+    private final String PHONENUMBER = "0536069941";
+    private final String FACEBOOK_ID = "100002893032846";
     private ImageButton whatsappBTN;
     private ImageButton phoneBTN;
     private ImageButton facebookBTN;
-
-    private final String PHONENUMBER = "0536069941";
-    private final String FACEBOOK_ID = "100002893032846";
-
     private AppCompatActivity activity;
 
     public void setActivity(AppCompatActivity activity) {

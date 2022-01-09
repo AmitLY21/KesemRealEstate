@@ -1,4 +1,4 @@
-package com.ALDev.kesemrealestate;
+package com.ALDev.kesemrealestate.Activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.ALDev.kesemrealestate.Fragments.contactFragment;
 import com.ALDev.kesemrealestate.Fragments.homeFragment;
 import com.ALDev.kesemrealestate.Fragments.likedFragment;
+import com.ALDev.kesemrealestate.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -24,13 +25,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         initFragments();
         bottomNavViewSwitcher();
-
     }
 
     private void initFragments() {
         homeFragment = new homeFragment();
         likedFragment = new likedFragment();
         contactFragment = new contactFragment();
+
     }
 
     /**
@@ -41,6 +42,11 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setItemIconTintList(null);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
         bottomNavigationView.setSelectedItemId(R.id.page_1_home);
+
+        if (getIntent().getStringExtra("contact") != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, contactFragment).commit();
+            bottomNavigationView.setSelectedItemId(R.id.page_3_contact);
+        }
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -61,7 +67,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
         return false;
     }
 

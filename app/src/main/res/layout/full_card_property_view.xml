@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/myWhite"
+    android:elevation="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/carouselView_fullCard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                app:showBottomShadow="false"
+                app:showNavigationButtons="false"
+                app:showTopShadow="false" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/property_LBL_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="bottom"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:text="PROPERTY_ADDRESS"
+                        android:textColor="@color/myBlack"
+                        android:textSize="24sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/property_LBL_DESCRPTION"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="30dp"
+                        android:ellipsize="end"
+                        android:maxLines="20"
+                        android:minLines="2"
+                        android:text="PROPERTY_DESCRPTION"
+                        android:textColor="@color/myBlack"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:layoutDirection="rtl">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_numOfRooms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="NUM_OF_ROOMS"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_numOfBathrooms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="NUM_OF_BATHROOMS"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_numOfParkingLots"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="NUM_OF_ParkingLots"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_numOfSquareMeter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="SquareMeter"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_Mamad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="Mamad"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_Storage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="Storage"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_balcony"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="Balcony"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_Elevator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela_round"
+                            android:text="Elevator"
+                            app:chipBackgroundColor="@color/white"
+                            app:chipStrokeColor="@color/myBlack"
+                            app:chipStrokeWidth="0.5dp" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <FrameLayout
+                        android:id="@+id/frame_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="30dp"
+                        android:background="#B609FF">
+
+                        <fragment
+                            android:id="@+id/map"
+                            class="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </FrameLayout>
+                </LinearLayout>
+
+            </ScrollView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/contact_BTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/myBlue"
+                    android:fontFamily="@font/varela_round"
+                    android:text="צור קשר"
+                    android:textColor="@color/myWhite"
+                    android:textSize="18sp"
+                    app:cornerRadius="6dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

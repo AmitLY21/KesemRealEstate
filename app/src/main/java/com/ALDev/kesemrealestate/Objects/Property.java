@@ -1,34 +1,49 @@
 package com.ALDev.kesemrealestate.Objects;
 
-import android.media.Image;
-import android.widget.ImageView;
-
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class Property {
-    int[] propertyImages = new int[15];
-    int numOfRooms;
-    int numOfBathrooms;
-    int squareFoot;
-    int numOfParkingSpaces;
-    int yearOfConstruction;
-    int numOfFloors;
-    boolean isLiked = false;
-    boolean elevator;
-    boolean storage;
-    boolean balcony;
-    boolean mamad; //residential secure space
-    String address;
+public class Property implements Serializable {
+    ArrayList<String> propertyImages = new ArrayList<>();
+    String description;
+    private String propertyNumber;
+    private int numOfRooms;
+    private int numOfBathrooms;
+    private int squareFoot;
+    private int numOfParkingSpaces;
+    private int numOfFloors;
+    private boolean isLiked = false;
+    private boolean elevator;
+    private boolean storage;
+    private boolean balcony;
+    private boolean mamad; //residential secure space
+    private String address;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Property property = (Property) o;
+        return Objects.equals(propertyNumber, property.propertyNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(propertyNumber);
+    }
 
     @Override
     public String toString() {
         return "Property{" +
-                "numOfRooms=" + numOfRooms +
+                "propertyImages=" + propertyImages +
+                ", propertyNumber='" + propertyNumber + '\'' +
+                ", numOfRooms=" + numOfRooms +
                 ", numOfBathrooms=" + numOfBathrooms +
                 ", squareFoot=" + squareFoot +
                 ", numOfParkingSpaces=" + numOfParkingSpaces +
-                ", yearOfConstruction=" + yearOfConstruction +
                 ", numOfFloors=" + numOfFloors +
+                ", isLiked=" + isLiked +
                 ", elevator=" + elevator +
                 ", storage=" + storage +
                 ", balcony=" + balcony +
@@ -38,131 +53,70 @@ public class Property {
                 '}';
     }
 
+    public String getPropertyNumber() {
+        return propertyNumber;
+    }
+
+
     public String getAddress() {
         return address;
     }
 
-    public Property setAddress(String address) {
-        this.address = address;
-        return this;
-    }
-
-    String description;
 
     public int getNumOfRooms() {
         return numOfRooms;
     }
 
-    public Property setNumOfRooms(int numOfRooms) {
-        this.numOfRooms = numOfRooms;
-        return this;
-    }
 
     public int getNumOfBathrooms() {
         return numOfBathrooms;
     }
 
-    public Property setNumOfBathrooms(int numOfBathrooms) {
-        this.numOfBathrooms = numOfBathrooms;
-        return this;
-    }
 
     public int getSquareFoot() {
         return squareFoot;
-    }
-
-    public Property setSquareFoot(int squareFoot) {
-        this.squareFoot = squareFoot;
-        return this;
     }
 
     public int getNumOfParkingSpaces() {
         return numOfParkingSpaces;
     }
 
-    public Property setNumOfParkingSpaces(int numOfParkingSpaces) {
-        this.numOfParkingSpaces = numOfParkingSpaces;
-        return this;
-    }
-
-    public int getYearOfConstruction() {
-        return yearOfConstruction;
-    }
-
-    public Property setYearOfConstruction(int yearOfConstruction) {
-        this.yearOfConstruction = yearOfConstruction;
-        return this;
-    }
-
-    public int getNumOfFloors() {
-        return numOfFloors;
-    }
-
-    public Property setNumOfFloors(int numOfFloors) {
-        this.numOfFloors = numOfFloors;
-        return this;
-    }
-
     public boolean isElevator() {
         return elevator;
-    }
-
-    public Property setElevator(boolean elevator) {
-        this.elevator = elevator;
-        return this;
     }
 
     public boolean isStorage() {
         return storage;
     }
 
-    public Property setStorage(boolean storage) {
-        this.storage = storage;
-        return this;
-    }
-
     public boolean isBalcony() {
         return balcony;
-    }
-
-    public Property setBalcony(boolean balcony) {
-        this.balcony = balcony;
-        return this;
     }
 
     public boolean isMamad() {
         return mamad;
     }
 
-    public Property setMamad(boolean mamad) {
-        this.mamad = mamad;
-        return this;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public Property setDescription(String description) {
-        this.description = description;
-        return this;
     }
 
     public boolean isLiked() {
         return isLiked;
     }
 
-    public int[] getPropertyImages() {
-        return propertyImages;
-    }
-
-    public Property setPropertyImages(int[] propertyImages) {
-        this.propertyImages = propertyImages;
-        return this;
-    }
-
     public Property setLiked(boolean liked) {
         isLiked = liked;
         return this;
     }
+
+    public ArrayList<String> getPropertyImages() {
+        return propertyImages;
+    }
+
+    public Property setPropertyImages(ArrayList<String> propertyImages) {
+        this.propertyImages = propertyImages;
+        return this;
+    }
+
 }

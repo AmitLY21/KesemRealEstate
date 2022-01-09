@@ -1,10 +1,12 @@
-package com.ALDev.kesemrealestate;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.ALDev.kesemrealestate.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.ALDev.kesemrealestate.R;
 
 public class SplashActivity extends AppCompatActivity {
 

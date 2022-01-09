@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/page_1_home"
-        android:icon="@drawable/home_icon"
-        android:iconTint="@color/white"
+        android:icon="@drawable/ic_home"
         android:title="@string/home_lbl"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/page_2_like"
-        android:icon="@drawable/like_icon"
-        android:iconTint="@color/white"
+        android:icon="@drawable/ic_like"
         android:title="@string/like_lbl"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/page_3_contact"
-        android:icon="@drawable/contact_me_icon"
-        android:iconTint="@color/white"
+        android:icon="@drawable/ic_contact_me"
         android:title="@string/contact_me_lbl"
         app:showAsAction="ifRoom" />
 </menu>

@@ -9,5 +9,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#E8EEF2</color>
     <color name="blueish">#B1D0E0</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="myWhite">#FAFAFA</color>
+    <color name="myBlue">#2e73e3</color>
+    <color name="myBlack">#0C0C25</color>
+    <color name="myRed">#F15F5F</color>
 
 </resources>

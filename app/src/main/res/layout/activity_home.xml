@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
-    tools:context=".HomeActivity">
+    android:background="@color/myWhite"
+    tools:context=".Activities.HomeActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -23,8 +23,9 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:background="@drawable/rounded_corener"
-        android:backgroundTint="@color/blueish"
         android:elevation="3dp"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
         app:menu="@menu/bottom_navigation_menu" />
 
 
